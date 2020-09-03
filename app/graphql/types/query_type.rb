@@ -14,13 +14,12 @@ module Types
     #   'Hello World - This is your Interview Challenge!\nGood luck.'
     # end
 
-    field :allCandidates, [Types::CandidateType], null: false do
-      description "Query that selects all candidates."
+    field :getAllCandidates, [Types::CandidateType], null: false do
+      description ""
     end
 
-    def allCandidates
+    def getAllCandidates
       return Candidate.all
     end
-
   end
 end
