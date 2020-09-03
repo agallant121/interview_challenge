@@ -14,12 +14,21 @@ module Types
     #   'Hello World - This is your Interview Challenge!\nGood luck.'
     # end
 
-    field :getAllCandidates, [Types::CandidateType], null: false do
+    field :allCandidates, [Types::CandidateType], null: false do
       description "This will get all the candidates."
     end
 
-    def getAllCandidates
+    def allCandidates
       return Candidate.all
+    end
+
+    field :candidate, Types::CandidateType, null: false do
+      description "This will get a specific candidate."
+      argument :id, ID, required: true
+    end
+
+    def candidate(id:)
+      return Candidate.find(id)
     end
   end
 end
