@@ -15,7 +15,7 @@ module Types
     # end
 
     field :getAllCandidates, [Types::CandidateType], null: false do
-      description ""
+      description "This will get all the candidates."
     end
 
     def getAllCandidates
