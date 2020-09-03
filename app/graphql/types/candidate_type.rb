@@ -18,6 +18,8 @@ module Types
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false do
       description "The date/time that this candidate was last updated at."
     end
-    field :job_applications, Types::HasManyType, null: true
+    field :job_application, JobApplicationType, null: true do
+      description "This candidate's job applications."
+    end
   end
 end
