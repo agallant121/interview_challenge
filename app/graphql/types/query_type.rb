@@ -30,5 +30,13 @@ module Types
     def candidate(id:)
       return Candidate.find(id)
     end
+
+    field :jobApplications, [Types::JobApplicationType], null: false do
+      description "This will get all of the job applications."
+    end
+
+    def jobApplications
+      return JobApplication.all
+    end
   end
 end
